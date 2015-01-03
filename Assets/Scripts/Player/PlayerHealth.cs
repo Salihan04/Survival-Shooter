@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
 	private Animator anim;
 	private AudioSource playerAudio;
 	private PlayerMovement playerMovement;
+	private PlayerShooting playerShooting;
 	private bool isDead;
 	private bool damaged;
 
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
 		anim = GetComponent<Animator>();
 		playerAudio = GetComponent<AudioSource>();
 		playerMovement = GetComponent<PlayerMovement>();
+		playerShooting = GetComponentInChildren<PlayerShooting>();
 		currentHealth = startingHealth;
 	}
 
@@ -54,12 +56,12 @@ public class PlayerHealth : MonoBehaviour
 	{
 		//To make sure health slider is fully red when the player is dead
 		GameObject healthFill = GameObject.FindGameObjectWithTag("HealthFill");
-//		Destroy(healthFill);
-
 		Image image = healthFill.GetComponentInChildren<Image>();
 		image.enabled = false;
 
 		isDead = true;
+
+		playerShooting.DisableEffects();
 
 		anim.SetTrigger("Die");
 
@@ -67,5 +69,6 @@ public class PlayerHealth : MonoBehaviour
 		playerAudio.Play ();
 
 		playerMovement.enabled = false;
+		playerShooting.enabled = false;
 	}
 }
