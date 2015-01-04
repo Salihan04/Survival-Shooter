@@ -65,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
 		GetComponent<NavMeshAgent>().enabled = false;		//so that enemy will not follow player
 		GetComponent<Rigidbody>().isKinematic = true;
 		isSinking = true;
-
+		ScoreManager.score += scoreValue;
 		Destroy(gameObject, 2f);
 	}
 }
