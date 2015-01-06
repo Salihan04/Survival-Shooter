@@ -3706,6 +3706,7 @@ GameObject:
   - 114: {fileID: 1153002530}
   - 225: {fileID: 1153002529}
   - 95: {fileID: 1153002534}
+  - 114: {fileID: 1153002535}
   m_Layer: 5
   m_Name: HUDCanvas
   m_TagString: Untagged
@@ -3815,6 +3816,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1153002535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153002528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302ff46188d9c614c9c8c014168ee89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 5556215}
+  restartDelay: 5
 --- !u!1 &1256002884
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,7 +4274,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 4fff99673a41e24439d527ad0bd6b569, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: .219999999
   m_Pitch: 1
   Loop: 1
